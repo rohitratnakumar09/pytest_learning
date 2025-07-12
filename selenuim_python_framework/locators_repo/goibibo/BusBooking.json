@@ -1,0 +1,40 @@
+[
+  {
+    "name":"from_city_input_field",
+    "locate":"name",
+    "locator":"autosuggestBusSRPSrcHomeName"
+  },
+  {
+    "name":"dest_city_input_field",
+    "locate":"id",
+    "locator":"autosuggestBusSRPDestHome"
+  },
+  {
+    "name":"booking_date_loc",
+    "locate":"xpath",
+    "locator":"//input[@placeholder='Pick a date']"
+  },
+    {
+    "name":"search_btn",
+    "locate":"xpath",
+    "locator":"//button[@data-testid='searchBusBtn']"
+  },
+  {
+    "name": "src_city",
+    "locate":"xpath",
+    "locator": "//span[text()='{src_city}']//parent::li",
+    "is_dynamic": true
+  },
+  {
+    "name": "dest_city",
+    "locate":"xpath",
+    "locator": "//span[text()='{dest_city}']//parent::li",
+    "is_dynamic": true
+  },
+  {
+    "name": "depart_date",
+    "locate":"xpath",
+    "locator": "//span[text()='{depart_date}']//parent::li",
+    "is_dynamic": true
+  }
+]
