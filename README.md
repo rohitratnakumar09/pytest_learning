@@ -91,13 +91,13 @@ Setup Python, Chrome/GeckoDriver in Jenkins environment
 ## 📸 Screenshots
 
 ### ✅ Test Report Sample (pytest-html)
-![Test Report](docs/screenshots/google_report.png)
+![Test Report](selenuim_python_framework/docs/screenshot/google_report.png)
 
-![Test Report](docs/screenshots/goibibo_report.png)
+![Test Report](selenuim_python_framework/docs/screenshot/goibibo.png)
 
 
 ### 🧪 Sample Screenshot on Failure
-![Screenshot on Failure](docs/screenshots/test_bus_booking.py_TestBusBooking_test_select_dest_city.png)
+![Screenshot on Failure](selenuim_python_framework/docs/screenshots/test_bus_booking.py_TestBusBooking_test_select_dest_city.png)
 
 ### 📁 Jenkins Console Output
 ![Folder Structure](docs/screenshots/jenkins_console.png)
