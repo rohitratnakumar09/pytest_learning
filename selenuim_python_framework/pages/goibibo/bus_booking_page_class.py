@@ -11,7 +11,6 @@ class BusBooking(SeleniumBase):
         self.log.info(f"Selecting source city: {src_city}")
 
         try:
-            
             # Locate and enter source city
             input_type, input_locator = self.loc.page_locators("from_city_input_field", src_city=src_city)
             if not self.send_keys(src_city, input_locator, locator_type=input_type):

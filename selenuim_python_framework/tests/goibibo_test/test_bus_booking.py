@@ -16,9 +16,9 @@ class TestBusBooking():
         self.page_data = get_test_data(__class__)
 
     @pytest.mark.smoke
-    def test_navigate_to__bus(self, request):
+    def test_verify_page_title(self, request):
         self.bus.log.info(f"TEST CASE: {request.node.name}")
-        #self.bus.goto_bus_booking_page()
+        assert self.bus.title == self.page_data['page_title'], f"Page title does not match: {self.page_data['page_title']}"
 
     def test_select_src_city(self, request):
         self.bus.log.info(f"TEST CASE: {request.node.name}")
