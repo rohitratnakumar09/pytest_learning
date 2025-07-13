@@ -3,6 +3,7 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options as ChromeOptions
 from selenium.webdriver.firefox.options import Options as FirefoxOptions
 import utils.logger_utility as log_utils
+import tempfile
 
 class WebDriver:
 
@@ -24,6 +25,9 @@ class WebDriver:
             chrome_options = ChromeOptions()
             if self.config.get("PROD","headless_mode") == "true":
                 chrome_options.add_argument("--headless=new")
+                # Optional but safe if user-data-dir is needed
+                user_data_dir = tempfile.mkdtemp(prefix="chrome_profile_")
+                chrome_options.add_argument(f"--user-data-dir={user_data_dir}")
                 chrome_options.add_experimental_option("excludeSwitches", ["enable-automation"])
                 chrome_options.add_experimental_option("useAutomationExtension", False)
                 chrome_options.add_argument(
