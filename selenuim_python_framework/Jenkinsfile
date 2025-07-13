@@ -1,0 +1,63 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Clone Repository') {
+            steps {
+                git branch: 'main', credentialsId: 'github-ssh', url: 'git@github.com:rohitratnakumar09/pytest_learning.git'
+            }
+        }
+
+        stage('Install Dependencies') {
+            steps {
+                sh '''
+                    python3 -m venv venv
+                    bash -c "
+                        source venv/bin/activate &&
+                        cd selenuim_python_framework &&
+                        pip install --upgrade pip &&
+                        pip install -r requirements.txt
+                    "
+                '''
+            }
+        }
+
+        stage('Run Tests') {
+            steps {
+                sh '''
+                    bash -c "
+                        source venv/bin/activate &&
+                        cd selenuim_python_framework &&
+
+                        echo '🔹 Running Google tests on Chrome' &&
+                        pytest tests/google_test/ --browser=chrome --html=temp/google_chrome_report.html &&
+
+                        echo '🔹 Running Goibibo tests on default browser' &&
+                        pytest tests/goibibo_test/ --browser=chrome --html=temp/goibibo_report.html
+                    "
+                '''
+            }
+        }
+    }
+
+    post {
+        always {
+            publishHTML([
+                reportName: 'Google - Chrome',
+                reportDir: 'selenuim_python_framework/temp',
+                reportFiles: 'google_chrome_report.html',
+                keepAll: true,
+                alwaysLinkToLastBuild: true,
+                allowMissing: false
+            ])
+            publishHTML([
+                reportName: 'Goibibo',
+                reportDir: 'selenuim_python_framework/temp',
+                reportFiles: 'goibibo_report.html',
+                keepAll: true,
+                alwaysLinkToLastBuild: true,
+                allowMissing: false
+            ])
+        }
+    }
+}

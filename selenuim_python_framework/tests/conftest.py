@@ -76,15 +76,15 @@ def pytest_configure(config):
     if not config.option.htmlpath:
         config.option.htmlpath = report_path
 
-@pytest.hookimpl(tryfirst=True)
-def pytest_sessionstart(session):
-    """
-    Clean temp and screenshot directories at the start of the test session.
-    """
-    temp_dir = os.path.join(PROJECT_ROOT, TEMP_DIR)
-    if os.path.exists(temp_dir):
-        shutil.rmtree(temp_dir)
-    os.makedirs(SCREENSHOT_DIRECTORY, exist_ok=True)
+# @pytest.hookimpl(tryfirst=True)
+# def pytest_sessionstart(session):
+#     """
+#     Clean temp and screenshot directories at the start of the test session.
+#     """
+#     temp_dir = os.path.join(PROJECT_ROOT, TEMP_DIR)
+#     if os.path.exists(temp_dir):
+#         shutil.rmtree(temp_dir)
+#     os.makedirs(SCREENSHOT_DIRECTORY, exist_ok=True)
 
 
 @pytest.hookimpl(tryfirst=True, hookwrapper=True)
