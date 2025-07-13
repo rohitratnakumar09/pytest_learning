@@ -1,0 +1,22 @@
+[
+  {
+    "name": "search_box",
+    "locate": "xpath",
+    "locator": "//textarea[@name=\"q\"]"
+  },
+  {
+    "name": "search_option",
+    "locate": "xpath",
+    "locator": "//ul[@role='listbox']//li/descendant::div[@role=\"option\"]"
+  },
+  {
+    "name": "select_search_option",
+    "locate": "xpath",
+    "locator": "//ul[@role='listbox']//li/descendant::div[@aria-label=\"selenium python download\"]"
+  },
+  {
+    "name":"selenium_download",
+    "locate":"xpath",
+    "locator":"//div[@id=\"search\"]//h3[text()=\"Downloads\"]"
+  }
+]
