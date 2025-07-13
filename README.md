@@ -97,10 +97,10 @@ Setup Python, Chrome/GeckoDriver in Jenkins environment
 
 
 ### 🧪 Sample Screenshot on Failure
-![Screenshot on Failure](selenuim_python_framework/docs/screenshots/test_bus_booking.py_TestBusBooking_test_select_dest_city.png)
+![Screenshot on Failure](selenuim_python_framework/docs/screenshot/test_bus_booking.py_TestBusBooking_test_select_dest_city.png)
 
 ### 📁 Jenkins Console Output
-![Folder Structure](docs/screenshots/jenkins_console.png)
+![Folder Structure](selenuim_python_framework/docs/screenshots/jenkins_console.png)
 
 
 ## Contributing
